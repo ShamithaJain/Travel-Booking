@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ travel.get_travel_type_display }} — {{ travel.source }} → {{ travel.destination }}</h2>
+<p><strong>Provider:</strong> {{ travel.provider|default:"N/A" }}</p>
+<p><strong>Departure:</strong> {{ travel.depart_datetime|date:"M d, Y H:i" }}</p>
+<p><strong>Price:</strong> ₹{{ travel.price }} | <strong>Available seats:</strong> {{ travel.available_seats }}</p>
+
+{% if user.is_authenticated %}
+  <a href="{% url 'book_travel' travel.pk %}" class="btn btn-success {% if travel.available_seats == 0 %}disabled{% endif %}">Book Now</a>
+{% else %}
+  <p><a href="{% url 'login' %}">Login</a> to book.</p>
+{% endif %}
+
+<a href="{% url 'travel_list' %}" class="btn btn-link">Back to list</a>
+{% endblock %}

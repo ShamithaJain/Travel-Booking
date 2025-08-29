@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Book: {{ travel.source }} → {{ travel.destination }}</h2>
+
+<form method="post">
+  {% csrf_token %}
+  
+  <!-- Django form fields (e.g., hidden fields, if any) -->
+  {{ form.as_p }}
+  
+  <!-- Number of seats input -->
+  <div class="mb-3">
+    <label for="num_seats" class="form-label">Number of Seats</label>
+    <input type="number" name="num_seats" id="num_seats" min="1" max="{{ travel.available_seats }}" value="1"
+           data-price="{{ travel.price }}" class="form-control">
+    <small class="text-muted">Available seats: {{ travel.available_seats }}</small>
+  </div>
+  
+  <!-- Total price display -->
+  <p>Total Price: <span id="total">₹0.00</span></p>
+  
+  <button type="submit" class="btn btn-primary">Confirm Booking</button>
+</form>
+
+<script>
+(function() {
+  const seatsInput = document.getElementById('num_seats');
+  const totalEl = document.getElementById('total');
+  const price = parseFloat(seatsInput.dataset.price);
+
+  function updateTotal() {
+    const n = Number(seatsInput.value) || 0;
+    totalEl.textContent = '₹' + (n * price).toFixed(2);
+  }
+
+  seatsInput.addEventListener('input', updateTotal);
+  updateTotal(); // initialize total on page load
+})();
+</script>
+
+{% endblock %}

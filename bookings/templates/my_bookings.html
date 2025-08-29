@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>My Bookings</h2>
+{% if bookings %}
+  <div class="list-group">
+    {% for b in bookings %}
+      <div class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>#{{ b.booking_id }}</strong> {{ b.travel_option.source }} → {{ b.travel_option.destination }}
+          <br><small>{{ b.booking_date|date:"M d, Y H:i" }} • Seats: {{ b.num_seats }} • ₹{{ b.total_price }}</small>
+        </div>
+        <div>
+          <span class="badge {% if b.status == 'confirmed' %}bg-success{% else %}bg-danger{% endif %}">{{ b.get_status_display }}</span>
+          {% if b.status == 'confirmed' %}
+            <a href="{% url 'cancel_booking' b.booking_id %}" class="btn btn-sm btn-outline-danger ms-2">Cancel</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>You have no bookings.</p>
+{% endif %}
+{% endblock %}
