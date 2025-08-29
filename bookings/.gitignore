@@ -1,6 +1,5 @@
 # Python
-*.pyc
-*.pyo
+*.py[cod]
 __pycache__/
 *.pyd
 
@@ -12,14 +11,12 @@ ENV/
 
 # Django
 *.log
-*.pot
-*.py[cod]
 db.sqlite3
 media/
+static/
 staticfiles/
-*.sqlite3
 
-# PyCharm / VSCode
+# IDEs
 .idea/
 .vscode/
 
