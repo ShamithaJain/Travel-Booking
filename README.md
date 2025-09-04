@@ -4,6 +4,10 @@ Django Project:
 
 A simple travel booking web application built with **Django** that allows users to browse travel options (flights, trains, buses), book tickets, and manage their bookings. The frontend uses **Django templates** and **Bootstrap** for styling.
 
+## 🚀 Live Demo  
+You can check out the deployed project here:  
+👉 [Travel Booking App](https://shamithajain.pythonanywhere.com/)
+
 ---
 
 ## Features
