@@ -96,6 +96,7 @@ Can be deployed on PythonAnywhere, AWS Elastic Beanstalk, Heroku, or any cloud s
 Make sure to configure the .env file for secret keys and database credentials.
 
 Project Structure
+```
 travel_booking/
 ├─ bookings/            # Django app
 │  ├─ migrations/       # Database migrations
@@ -116,7 +117,7 @@ travel_booking/
 ├─ manage.py
 ├─ requirements.txt
 └─ README.md
-
+```
 .gitignore Highlights
 
 Virtual environments: venv/
