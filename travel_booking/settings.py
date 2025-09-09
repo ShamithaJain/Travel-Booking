@@ -4,10 +4,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r1+%%fls5dll9m2^an((*k-wr&m7y0imn1z+1vgz2^5x)e#^)3'
 
 DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
 INSTALLED_APPS = [
     "crispy_bootstrap5",
