@@ -11,7 +11,7 @@
         </div>
         <div>
           <span class="badge {% if b.status == 'confirmed' %}bg-success{% else %}bg-danger{% endif %}">{{ b.get_status_display }}</span>
-          {% if b.status|lower == 'confirmed' %}
+          {% if b.status == 'confirmed' %}
             <a href="{% url 'cancel_booking' b.booking_id %}" class="btn btn-sm btn-outline-danger ms-2">Cancel</a>
           {% endif %}
         </div>

@@ -102,4 +102,4 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-ALLOWED_HOSTS = ['shamithajain.pythonanywhere.com']
+ALLOWED_HOSTS = ['shamithajain.pythonanywhere.com','127.0.0.1']

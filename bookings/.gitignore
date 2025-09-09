@@ -2,7 +2,7 @@
 *.py[cod]
 __pycache__/
 *.pyd
-
+*.pyc
 # Virtual environment
 venv/
 env/
