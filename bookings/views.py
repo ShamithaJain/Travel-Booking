@@ -119,6 +119,13 @@ def book_travel(request, pk):
 
     return render(request, "book_travel.html", {"travel": travel})
 
+def to_dollars(value):
+    rupee_to_d=0.0012
+    try:
+        value=float(value)
+        return f"${value * rupee_to_d:.2f}"
+    except(ValueError,TypeError):
+        return value
 
 @login_required
 def my_bookings(request):
