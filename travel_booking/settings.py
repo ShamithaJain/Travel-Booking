@@ -93,7 +93,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Email (dev-safe: prints emails to the runserver console)
 from decouple import config
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
