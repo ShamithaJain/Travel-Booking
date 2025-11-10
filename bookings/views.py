@@ -119,6 +119,9 @@ def book_travel(request, pk):
 
     return render(request, "book_travel.html", {"travel": travel})
 
+from django import template
+register=template.Library()
+
 def to_dollars(value):
     rupee_to_d=0.0012
     try:
